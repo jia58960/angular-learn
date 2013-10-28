@@ -1,1 +1,18 @@
-<p>This is the partial for view 1.</p>
+<b>发票</b>
+<br>
+<table class="table table-stripped">
+	<tr><td>数量</td><td>价格</td></tr>
+	<tr>
+		<td>
+			<input type="integer" min="0" ng-model="qty" required />
+		</td>
+		<td>
+			<input type="number" ng-model="cost" required />	
+		</td>
+	</tr>
+</table>
+<hr>
+<b>总数：</b>{{qty * cost | currency}}
+
+	
+
