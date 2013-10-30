@@ -3,11 +3,12 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('MyCtrl1', ['$scope',function($scope) {
-  	$scope.qty = 2;
-  	$scope.cost = 2.596;
+  controller('MyCtrl1', ['$scope','time',function($scope,time) {
+  	
+  	$scope.time = time;
 
   }])
   .controller('MyCtrl2', [function() {
 
   }]);
+
