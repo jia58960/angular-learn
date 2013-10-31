@@ -1,2 +1,23 @@
+	<form action="" name="form" class="css-form" novalidate>
+		姓名:
+		<input type="text" ng-model="user.name" name="uName" required /><br>
+		邮箱:
+		<input type="email" ng-model="user.email" name="uEmail" required /><br>
+		<div ng-shwo="form.uEmail.$dirty && form.uEmail.$invalid">错误:
+			<span ng-show="form.uEmail.$error.required">请填写邮箱</span>
+			<span ng-show="form.uEmail.$error.email">邮箱格式不对</span>
+		</div>
+		性别:
+		<input type="radio" ng-model="user.gender" value="male" />男
+		<input type="radio" ng-model="user.gender" value="female" />女
 
- <b>当前时间为：{{time.now}}</b>
+		<input type="checkbox" ng-model="user.agree" name="userAgree" required>
+
+		我同意: <input type="text" ng-show="user.agree" ng-model="user.agreeSign" required /><br>
+
+		<div ng-show="!user.agree || !user.agreeSign">Please agree and sign.</div>
+
+        <button ng-click="reset()" ng-disabled="isUnchanged(user)">重置</button>
+        <button ng-click="update(user)"
+                ng-disabled="form.$invalid || isUnchanged(user)">保存</button>
+	</form>
